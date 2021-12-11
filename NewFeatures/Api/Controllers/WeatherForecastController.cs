@@ -30,7 +30,12 @@ namespace Api.Controllers
             .ToArray();
         }
 
-        //[HttpGet(Name = "GetNames")]
-        //public IEnumerable
+        [HttpGet(Name = "GetEmployeeInfo")]
+        public Employee GetEmpInfo()
+        {
+            var emp = new Employee { Id = 1, FirstName = "Obi", LastName = "Oberoi", Gender = 'M', Age = 40 };
+            return emp;
+
+        }
     }
 }
