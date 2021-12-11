@@ -29,5 +29,8 @@ namespace Api.Controllers
             })
             .ToArray();
         }
+
+        //[HttpGet(Name = "GetNames")]
+        //public IEnumerable
     }
 }
