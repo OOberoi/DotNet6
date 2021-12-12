@@ -23,19 +23,19 @@ namespace Api.Controllers
         {
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
-                Date = DateOnly.FromDateTime(DateTime.Now).AddDays(index),
+                //Date = DateOnly.FromDateTime(DateTime.Now).AddDays(index),
                 TemperatureC = Random.Shared.Next(-20, 55),
                 Summary = Summaries[Random.Shared.Next(Summaries.Length)]
             })
             .ToArray();
         }
 
-        [HttpGet(Name = "GetEmployeeInfo")]
-        public Employee GetEmpInfo()
-        {
-            var emp = new Employee { Id = 1, FirstName = "Obi", LastName = "Oberoi", Gender = 'M', Age = 40 };
-            return emp;
+        //[HttpGet(Name = "GetEmployeeInfo")]
+        //public Employee GetEmpInfo()
+        //{
+        //    var emp = new Employee { Id = 1, FirstName = "Obi", LastName = "Oberoi", Gender = 'M', Age = 40 };
+        //    return emp;
 
-        }
+        //}
     }
 }
