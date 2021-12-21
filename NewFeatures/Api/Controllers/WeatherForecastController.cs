@@ -30,6 +30,12 @@ namespace Api.Controllers
             .ToArray();
         }
 
+        [HttpGet()]
+        public IActionResult GetMyGreetings()
+        {
+            return Ok("Howdy Obi!");
+        }
+
         //[HttpGet(Name = "GetEmployeeInfo")]
         //public Employee GetEmpInfo()
         //{
