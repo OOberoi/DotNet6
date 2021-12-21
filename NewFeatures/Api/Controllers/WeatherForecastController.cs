@@ -8,8 +8,8 @@ namespace Api.Controllers
     {
         private static readonly string[] Summaries = new[]
         {
-        "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Windy", "Balmy", "Hot", "Sweltering", "Scorching"
-    };
+        "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Windy", "Balmy", "Hot", "Sweltering", "Scorching"    
+        };
 
         private readonly ILogger<WeatherForecastController> _logger;
 
@@ -18,19 +18,26 @@ namespace Api.Controllers
             _logger = logger;
         }
 
-        [HttpGet(Name = "GetWeatherForecast")]  
+        [HttpGet(Name = "GetWeatherForecast")]
         public IEnumerable<WeatherForecast> Get()
         {
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+            try
             {
-                Date = DateTime.Now.AddDays(index),
-                TemperatureC = Random.Shared.Next(-20, 55),
-                Summary = Summaries[Random.Shared.Next(Summaries.Length)]
-            })
-            .ToArray();
+                return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+                {
+                    Date = DateTime.Now.AddDays(index),
+                    TemperatureC = Random.Shared.Next(-20, 55),
+                    Summary = Summaries[Random.Shared.Next(Summaries.Length)]
+                })
+                .ToArray();
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
         }
 
-        [HttpGet()]
+        [HttpGet(Name = "GetMyGreetings")]
         public IActionResult GetMyGreetings()
         {
             return Ok("Howdy Obi!");
