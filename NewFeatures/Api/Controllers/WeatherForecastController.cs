@@ -25,15 +25,14 @@ namespace Api.Controllers
         }
 
         [HttpGet(Name = "GetEmployeeInfo")]
-        public IEnumerable<Employee> GetEmpInfo()
+        public IEnumerable<Employee> Get()
         {
-            var emp = new List<Employee>() 
-            {
+            var emp = new List<Employee>() { 
                 new Employee()
                 {
                 Id = 1, FirstName = "Obi", LastName = "Oberoi", Gender = 'M', Age = 40
-            }
-                };
+                }
+            };
             return emp;
         }
     }
