@@ -18,36 +18,42 @@ namespace Api.Controllers
             _logger = logger;
         }
 
-        [HttpGet(Name = "GetWeatherForecast")]
-        public IEnumerable<WeatherForecast> Get()
-        {
-            try
-            {
-                return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-                {
-                    Date = DateTime.Now.AddDays(index),
-                    TemperatureC = Random.Shared.Next(-20, 55),
-                    Summary = Summaries[Random.Shared.Next(Summaries.Length)]
-                })
-                .ToArray();
-            }
-            catch (Exception ex)
-            {
-                throw;
-            }
-        }
+        //[HttpGet(Name = "GetWeatherForecast")]
+        //public IEnumerable<WeatherForecast> Get()
+        //{
+            //try
+            //{
+            //    return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+            //    {
+            //        Date = DateTime.Now.AddDays(index),
+            //        TemperatureC = Random.Shared.Next(-20, 55),
+            //        Summary = Summaries[Random.Shared.Next(Summaries.Length)]
+            //    })
+            //    .ToArray();
+            //}
+            //catch (Exception ex)
+            //{
+            //    throw;
+            //}
+        //}
 
         [HttpGet(Name = "GetMyGreetings")]
         public IActionResult GetMyGreetings()
         {
-            return Ok("Howdy Obi!");
+            return Ok("Howdy Obi Oberoi!");
         }
 
-        //[HttpGet(Name = "GetEmployeeInfo")]
-        //public Employee GetEmpInfo()
-        //{
-        //    var emp = new Employee { Id = 1, FirstName = "Obi", LastName = "Oberoi", Gender = 'M', Age = 40 };
-        //    return emp;
-        //}
+        [HttpGet(Name = "GetEmployeeInfo")]
+        public IEnumerable<Employee> GetEmpInfo()
+        {
+            var emp = new List<Employee>() 
+            {
+                new Employee()
+                {
+                Id = 1, FirstName = "Obi", LastName = "Oberoi", Gender = 'M', Age = 40
+            }
+                };
+            return emp;
+        }
     }
 }
