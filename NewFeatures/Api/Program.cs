@@ -1,3 +1,5 @@
+
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -15,6 +17,13 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.Use(async (context, next) =>
+{
+    context.Request.Headers.AcceptLanguage = "C# Forever";
+    context.Response.Headers.XPoweredBy = "ASPNETCORE 6.0";
+    await next.Invoke(context);
+});
 
 app.UseHttpLogging();
 app.UseHttpsRedirection();
