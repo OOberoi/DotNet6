@@ -31,7 +31,7 @@ namespace Api.Controllers
             return emp;
         }
 
-
+        [HttpGet(Name = "GetNames")]
         public IActionResult GetArrayList()
         {
             List<string> list = new()
