@@ -33,8 +33,17 @@ namespace Api.Controllers
 
 
         public IActionResult GetArrayList()
-        { 
-            return Ok();
+        {
+            List<string> list = new()
+            {
+                "Obi",
+                "Mark",
+                "Dave",
+                "Chris",
+                "Jay"
+            };
+
+            return Ok(list);
         }
     }
 }
