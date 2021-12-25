@@ -30,5 +30,11 @@ namespace Api.Controllers
             };
             return emp;
         }
+
+
+        public IActionResult GetArrayList()
+        { 
+            return Ok();
+        }
     }
 }
