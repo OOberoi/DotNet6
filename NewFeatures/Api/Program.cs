@@ -1,5 +1,4 @@
 
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -35,3 +34,8 @@ app.MapControllers();
 app.UseDeveloperExceptionPage();
 
 app.Run();
+
+static void Main(string[] args)
+{ 
+    
+}
