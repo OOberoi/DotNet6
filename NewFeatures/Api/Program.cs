@@ -1,9 +1,8 @@
 
-var builder = WebApplication.CreateBuilder(args);
+    var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
-builder.Services.AddControllers();
+    // Add services to the container.
+    builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -35,7 +34,16 @@ app.UseDeveloperExceptionPage();
 
 app.Run();
 
-static void Main(string[] args)
-{ 
-    
-}
+//public delegate string Reverse(string s);
+
+//static string ReverseString(string s)
+//{
+//    return new string(s.Reverse().ToArray());
+//}
+//static void Main(string[] args)
+//{
+//    Reverse rev = ReverseString;
+//    Console.WriteLine(rev("Hello Obi!"));
+//}
+
+
